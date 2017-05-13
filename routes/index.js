@@ -1,27 +1,11 @@
 const express = require('express');
 const router = express.Router();
 const storeController = require('../controllers/storeController');
+const { catchErrors } = require('../handlers/errorHandlers');
 // Do work here
 router.get('/', storeController.homepage);
 
-router.get('/json', (req, res) => {
-  res.json({
-    name: 'Tobias',
-    isCool: true,
-    something: {
-      blabla: 'yeahhh',
-      youCan: 'do this'
-    }
-  })
-});
-
-router.get('/params', (req, res) => {
-    res.json(req.query);
-});
-
-router.get('/reverse/:name', (req, res) => {
-  const reversed = [...req.params.name].reverse().join('');
-  res.send(reversed);
-});
+router.get('/add', storeController.addStore);
+router.post('/add', catchErrors(storeController.createStore));
 
 module.exports = router;
