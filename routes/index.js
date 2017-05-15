@@ -16,6 +16,8 @@ router.post('/add/:id',
   catchErrors(storeController.resize),
   catchErrors(storeController.updateStore)
 );
+router.get('/tags', catchErrors(storeController.getStoresByTag));
+router.get('/tags/:tag', catchErrors(storeController.getStoresByTag));
 router.get('/store/:slug', storeController.getSingleStore);
 router.get('/stores/:id/edit', catchErrors(storeController.editStore));
 
