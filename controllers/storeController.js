@@ -73,6 +73,11 @@ exports.getStores = async (req, res) => {
   res.render('stores', {title: 'Stores', stores});
 }
 
+exports.getHome = async (req, res) => {
+  const stores = await Store.find();
+  res.render('home', {stores});
+}
+
 exports.getSingleStore = async (req, res, next) => {
   const store = await Store.findOne({slug: req.params.slug});
   if (!store) next();

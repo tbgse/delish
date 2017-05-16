@@ -1,0 +1,7 @@
+mixin heroStore(store = {})
+  a.homepage__feature-container(href=`/store/${store.slug}`)
+    img(src=`/uploads/${store.photo || 'store.png'}`)
+    .homepage__feature-content 
+      span #{store.name}
+      span.homepage__feature-content--sub ★★★☆☆ (28)
+    

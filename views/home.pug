@@ -1,0 +1,33 @@
+extends layout
+
+include mixins/_heroStore
+
+block content
+  .single
+    .single__hero
+      img.single__image(src='/images/site/hero.jpeg' style='object-position:top')
+      .homepage__hero-content
+        h1 Local food you'll love
+        input.homepage__hero-input(type='text' placeholder='Search for food, coffee, bars and more...')
+  
+  .homepage__feature-details.inner
+    .homepage__feature-container.homepage__feature-container--text 
+      span 
+       span This weeks
+       br
+       span top locations 
+       br 
+       span in 
+       strong Amsterdam
+    each store in stores
+      +heroStore(store)
+
+  .homepage__feature-details.inner
+    .homepage__feature-container.homepage__feature-container--text.homepage__gradient-2
+      span 
+       span New Openings 
+       br 
+       span in 
+       strong Amsterdam
+    each store in stores
+      +heroStore(store)
