@@ -36,6 +36,7 @@
     z-index:2;
     margin-bottom:75px;
     display:flex;
+    overflow:hidden;
     flex-wrap:wrap;
     animation: move-up .2s ease forwards;
     transform:translateY(40px);
@@ -52,17 +53,45 @@
     align-items: center;
     justify-content:center;
     font-size:32px;
+    background: #000;
+    overflow:hidden;
     img {
       height:100%;
       width:100%;
       object-fit:cover;
       position: absolute;
+      transition:.2s ease;
+    }
+  }
+  &__feature-container:hover {
+    img {
+      transform:scale(1.15);
+      opacity:0.7;
+      transition:.2s ease;
     }
   }
   &__feature-container--text {
     background:linear-gradient(200deg, #F9BF66, #F95C81);
     padding:20px;
     line-height:42px;
+  }
+  &__divider {
+    background:transparent;
+    height:500px;
+    position:absolute;
+    width:100%;
+    top:1200px;
+    z-index:1;
+  }
+  &__divider:after {
+    background:#fcfcfc;
+    content: '';
+    height:800px;
+    width:100%;
+    position:absolute;
+    top:calc(100% - 100px);
+    left:0;
+    z-index:1;
   }
   &__feature-content {
     background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.4));
