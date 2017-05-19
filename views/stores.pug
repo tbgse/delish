@@ -3,8 +3,9 @@ extends layout
 include mixins/_storeCard
 
 block content
+  .stores__search-area
+  
   .inner
-    h2 #{title}
     .stores
       each store in stores
         +storeCard(store)

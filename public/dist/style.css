@@ -437,11 +437,12 @@ html {
 
 body {
   font-size: 1.5rem;
-  color: #303030; }
+  color: #303030;
+  font-family: "Khula"; }
 
 h1, h2, h3, h4, h5, h6 {
   font-size: 5rem;
-  font-family: 'Khula';
+  font-family: "Khula";
   font-weight: 600;
   letter-spacing: -1px;
   text-transform: uppercase; }
@@ -462,9 +463,10 @@ p {
   position: relative;
   z-index: 2;
   margin: 0;
-  font-size: 40px;
+  font-size: 28px;
   color: #fff;
   z-index: 2;
+  text-transform: capitalize;
   line-height: 1.1;
   line-height: 1.1; }
   .title--long {
@@ -482,7 +484,12 @@ p {
         transform: skew(-5deg); }
   .title a {
     border-bottom: 0;
-    color: #fff; }
+    color: #fff;
+    background: #1b1b1b;
+    display: inline-block;
+    padding: 8px 12px 4px 12px;
+    text-align: right;
+    line-height: 1.3em; }
 
 .title--single {
   max-width: 600px;
@@ -641,6 +648,9 @@ label {
   .nav__link--border {
     border: 1px solid rgba(255, 255, 255, 0.75);
     margin: 2rem 1.2rem; }
+  .nav--solid {
+    background: #333;
+    position: relative; }
 
 @media all and (max-width: 1200px) {
   .nav__link {
@@ -711,8 +721,7 @@ label {
 .store {
   background: white;
   margin: 10px 0;
-  width: 30%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1), 0 5px 10px rgba(0, 0, 0, 0.05); }
+  width: calc(33.33% - 15px); }
   .store--wide {
     width: 100%; }
   .store__details {
@@ -732,7 +741,7 @@ label {
   z-index: 2;
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.2), 0 1px 0 rgba(255, 255, 255, 0.2);
-  margin-bottom: 50px;
+  margin-bottom: 236px;
   padding-top: 10px;
   padding-bottom: 20px;
   display: -ms-flexbox;
@@ -763,7 +772,6 @@ label {
     width: 100%;
     top: 0;
     right: 0;
-    background: linear-gradient(45deg, #05b3d6 0%, rgba(5, 179, 214, 0) 70%), linear-gradient(135deg, #0958ec 10%, rgba(9, 88, 236, 0) 80%), linear-gradient(225deg, #d209ec 10%, rgba(210, 9, 236, 0) 80%), linear-gradient(315deg, #05e129 100%, rgba(5, 225, 41, 0) 70%);
     opacity: 0.6;
     z-index: 1;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
@@ -778,6 +786,11 @@ label {
     object-fit: cover;
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 90%, 0% 100%); }
+
+.stores__search-area {
+  background: #d8d8d8;
+  min-height: 330px;
+  margin-bottom: 40px; }
 
 .tags {
   margin: 0;

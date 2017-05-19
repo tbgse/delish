@@ -75,7 +75,7 @@ exports.getStores = async (req, res) => {
 
 exports.getHome = async (req, res) => {
   const stores = await Store.find();
-  res.render('home', {stores});
+  res.render('home', {stores, transparentNav: true});
 }
 
 exports.getSingleStore = async (req, res, next) => {

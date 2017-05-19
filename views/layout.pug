@@ -9,7 +9,7 @@ html
   body
     block header
       header.top
-        nav.nav
+        nav.nav(class= transparentNav ? "" : "nav--solid")
           .nav__section.nav__section--pages
             each item in h.menu
               li.nav__item
