@@ -70,7 +70,9 @@ exports.updateStore = async (req, res) => {
 
 exports.getStores = async (req, res) => {
   const stores = await Store.find();
-  res.render('stores', {title: 'Stores', stores});
+  const tags = await Store.getTagsList();
+  const tag = req.params.tag;
+  res.render('stores', {title: 'Stores', stores, tags, tag});
 }
 
 exports.getHome = async (req, res) => {
